@@ -3,10 +3,56 @@ public class MyDeque<E>{
   private E[] data;
   private int size, start, end;
 
-  public MyDeque(){  }
-  public MyDeque(int initialCapacity){  }
-  public int size(){ }
-  public String toString(){ }
+  // Constructor
+  @SuppressWarnings("unchecked")
+  public MyDeque(){
+    data = (E[])new Object[10];
+    size, start, end = 0;
+    
+  }
+  
+    @SuppressWarnings("unchecked")
+  public MyDeque(int initialCapacity){
+    data = (E[])new Object[10];
+    size = initialCapacity;
+    start, end = 0; 
+  
+  }
+  
+  
+  public int size(){
+  
+    return size;
+  }
+  public String toString(){ 
+    
+    String str = "{ ";
+
+    if(end < start){
+      
+      int i = start;
+      while(i < data.length){
+        str += data[i];
+        str += ", ";
+        i++;
+      }
+      
+      i = 0; //set i to 0 to wrap around to beginning of the deque
+  
+      while(i < end){
+        str += data[i];
+        str += ", ";
+        i++
+      }
+      
+      str += " }";
+      return str;
+    
+    }
+    
+    
+  }
+  
   public void addFirst(E element){ }
   public void addLast(E element){ }
   public E removeFirst(){ }
