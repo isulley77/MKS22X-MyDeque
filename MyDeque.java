@@ -21,9 +21,9 @@ public class MyDeque<E>{
   
   
   public int size(){
-  
     return size;
   }
+  
   public String toString(){ 
     
     String str = "{ ";
