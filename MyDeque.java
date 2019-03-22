@@ -55,6 +55,12 @@ public class MyDeque<E>{
   
   public void addFirst(E element){
     
+    //throw exception
+    if(element == null){
+      throw new NullPointerException();  
+    }
+  }
+  
     if(start >= 1){
       data[start - 1] = element;
       size++;
