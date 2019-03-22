@@ -24,6 +24,9 @@ public class MyDeque<E>{
     return size;
   }
   
+  
+  
+  
   public String toString(){ 
     
     String str = "{ ";
@@ -32,9 +35,11 @@ public class MyDeque<E>{
       
       int i = start;
       while(i < data.length){
-        str += data[i];
-        str += ", ";
-        i++;
+        if(data[i] != null){
+          str += data[i];
+          str += ", ";
+          i++;
+        }
       }
       
       i = 0; //set i to 0 to wrap around to beginning of the deque
